@@ -85,7 +85,7 @@ jobs:
           # 2. ARMv7 (armeabi-v7a)
           mkdir -p app/src/main/jniLibs/armeabi-v7a
           zig build-lib src/android_main.zig \
-            -target arm-linux-androideabi \
+            -target arm-linux-android \
             -dynamic \
             -O ReleaseFast \
             --name zigcraft
