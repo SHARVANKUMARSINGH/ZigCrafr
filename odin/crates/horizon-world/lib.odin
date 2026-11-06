@@ -1,0 +1,159 @@
+//! Transpiled from Horizon Rust crate
+package horizon_world_lib
+
+import "core:fmt"
+import "core:mem"
+import "core:math"
+
+// Vanilla-compatible world data for Horizon. This crate does not run gameplay.
+
+    // rust: pub mod active_effect_tick;
+    // rust: pub mod active_effects;
+    // rust: pub mod attachments;
+    // rust: pub mod attribute_health;
+    // rust: pub mod attribute_map;
+    // rust: pub mod attribute_updates;
+    // rust: pub mod attributes;
+    // rust: pub mod block_collision;
+    // rust: pub mod block_collision_scan;
+    // rust: pub mod block_entities;
+    // rust: pub mod block_entity_push;
+    // rust: pub mod block_landing;
+    // rust: pub mod block_placement;
+    // rust: pub mod block_properties;
+    // rust: pub mod block_render;
+    // rust: pub mod block_state_properties;
+    // rust: pub mod block_support;
+    // rust: pub mod block_survival;
+    // rust: pub mod blocking_item_damage;
+    // rust: pub mod blocking_rules;
+    // rust: pub mod bundle_weight;
+    // rust: pub mod chunk;
+    // rust: pub mod chunk_status;
+    // rust: pub mod climbing;
+    // rust: pub mod collision;
+    // rust: pub mod collision_context;
+    // rust: pub mod combat_rules;
+    // rust: pub mod component_durability;
+    // rust: pub mod component_patch;
+    // rust: pub mod compression;
+    // rust: pub mod conditions;
+    // rust: pub mod consumable;
+    // rust: pub mod consume_effect;
+    // rust: pub mod damage_immunity;
+    // rust: pub mod damage_reduction;
+    // rust: pub mod damage_source;
+    // rust: pub mod datafix;
+    // rust: pub mod dynamic_support;
+    // rust: pub mod edge_backoff;
+    // rust: pub mod effect_attribute_modifiers;
+    // rust: pub mod effect_notifications;
+    // rust: pub mod effect_particles;
+    // rust: pub mod effect_sync;
+    // rust: pub mod entity_collision;
+    // rust: pub mod entity_fluid;
+    // rust: pub mod entity_fluid_tick;
+    // rust: pub mod entity_move;
+    // rust: pub mod entity_obstruction;
+    // rust: pub mod extra_items;
+    // rust: pub mod fall_damage;
+    // rust: pub mod fluid;
+    // rust: pub mod fluid_box;
+    // rust: pub mod fluid_flow;
+    // rust: pub mod fluid_occupancy;
+    // rust: pub mod fluid_shape;
+    // rust: pub mod food;
+    // rust: pub mod food_properties;
+    // rust: pub mod food_storage;
+    // rust: pub mod free_space;
+    // rust: pub mod ground_support;
+    // rust: pub mod heightmap;
+    // rust: pub mod identifier;
+    // rust: pub mod interaction_shapes;
+    // rust: pub mod item_after_use;
+    // rust: pub mod item_blocking;
+    // rust: pub mod item_cooldowns;
+    // rust: pub mod item_defaults;
+    // rust: pub mod item_durability;
+    // rust: pub mod item_particles;
+    // rust: pub mod item_stack_storage;
+    // rust: pub mod item_template;
+    // rust: pub mod item_use;
+    // rust: pub mod item_use_catalog;
+    // rust: pub mod item_use_lifecycle;
+    // rust: pub mod item_use_start;
+    // rust: pub mod java_hash_map;
+    // rust: pub mod json_file;
+    // rust: pub mod json_folder;
+    // rust: pub mod lazy_json;
+    // rust: pub mod level;
+    // rust: pub mod liquid_collision;
+    // rust: pub mod live_attribute_updates;
+    // rust: pub mod living_air;
+    // rust: pub mod living_damage;
+    // rust: pub mod living_fall;
+    // rust: pub mod living_fluid;
+    // rust: pub mod living_health;
+    // rust: pub mod living_hurt;
+    // rust: pub mod living_landing;
+    // rust: pub mod living_motion;
+    // rust: pub mod loot;
+    // rust: pub mod movement_emission;
+    // rust: pub mod movement_properties;
+    // rust: pub mod movement_restitution;
+    // rust: pub mod movement_statistics;
+    // rust: pub mod movement_support;
+    // rust: pub mod native_load_hooks;
+    // rust: pub mod nbt;
+    // rust: pub mod object_open_map;
+    // rust: pub mod object_open_set;
+    // rust: pub mod piston_movement;
+    // rust: pub mod piston_push;
+    // rust: pub mod piston_shape;
+    // rust: pub mod player_food;
+    // rust: pub mod player_health;
+    // rust: pub mod player_hurt;
+    // rust: pub mod player_travel;
+    // rust: pub mod powder_snow_collision;
+    // rust: pub mod region;
+    // rust: pub mod registry;
+    // rust: pub mod registry_collision_scan;
+    // rust: pub mod registry_fall_ray;
+    // rust: pub mod registry_fluid;
+    // rust: pub mod retrogen;
+    // rust: pub mod server_player_combat;
+    // rust: pub mod server_player_damage;
+    // rust: pub mod snbt_text;
+    // rust: pub mod stored_consume;
+    // rust: pub mod stored_effect_attributes;
+    // rust: pub mod suffocation;
+    // rust: pub mod swimming;
+    // rust: pub mod synced_floats;
+    // rust: pub mod teleport_consume;
+    // rust: pub mod tick_data;
+    // rust: pub mod use_remainder;
+    // rust: pub mod view_direction;
+    // rust: pub mod water_splash;
+    // rust: pub mod world_movement;
+    // rust: pub mod world_ray;
+    // rust: pub mod worldgen;
+
+DATA_VERSION :: horizon_core::version::DATA_VERSION
+
+    // rust: pub mod item_stack_refs;
+    // rust: pub mod simple_container;
+
+    // rust: pub mod player_inventory;
+
+    // rust: pub mod inventory_pickup;
+
+    // rust: pub mod inventory_tick;
+
+    // rust: pub mod player_equipment;
+
+    // rust: pub mod living_use_flags;
+    // rust: pub mod status_effect;
+    // rust: pub mod stepped_interpolation;
+    // rust: pub mod synced_values;
+
+    // rust: pub mod inventory_use;

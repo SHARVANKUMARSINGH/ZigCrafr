@@ -1,0 +1,9 @@
+# Build artifacts and caches
+.zig-cache/
+zig-out/
+*.o
+*.a
+android/.gradle/
+android/app/build/
+android/local.properties
+.DS_Store

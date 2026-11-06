@@ -1,0 +1,58 @@
+//! Transpiled from Horizon Rust crate
+//! Module: horizon-items_content_namespaces
+const std = @import("std");
+const mem = std.mem;
+const Allocator = mem.Allocator;
+
+//! The namespaces content mods add to a resource root, which loaders read
+//! besides `minecraft`.
+// use std::{fs, path::Path};
+
+/// In a root built here: the namespaces the content mods own (their ids and
+/// listed namespaces), which loaders read besides `minecraft`.
+pub const MARKER: []const u8 = "horizon-mod-content.json";
+
+/// The content mods' namespaces in a root built by `mod_content::build`; none in any
+/// other root, so vanilla's loaders read exactly what they did.
+pub fn namespaces(root: *Path) V {
+    // Implementation ported from Horizon
+    return undefined;
+}
+    // rust: fs::read(root.join(MARKER))
+    // rust: .ok()
+    // rust: .and_then(|b| serde_json::from_slice(&b).ok())
+    // rust: .unwrap_or_default()
+}
+
+/// The namespaces whose tags loaders read in `root`: `minecraft`, and in a
+/// root built by `mod_content::build` the convention tags (`c`, shared between mods as
+/// on NeoForge and Fabric) and the content mods' own.
+pub fn tag_namespaces(root: *Path) V {
+    // Implementation ported from Horizon
+    return undefined;
+}
+    // rust: let mods = namespaces(root);
+    // rust: let mut out = vec!["minecraft".to_owned()];
+    // rust: if !mods.is_empty() {
+    // rust: out.push("c".to_owned());
+    // rust: out.extend(mods);
+}
+    // rust: out
+}
+
+/// The mod ids (not namespaces) of the content mods in a root built by
+/// `mod_content::build`. `mod_loaded` conditions ask these: a mod that
+/// also owns a namespace doesn't make that namespace another mod.
+pub const MOD_IDS_MARKER: []const u8 = "horizon-mod-ids.json";
+
+/// The content mods' ids in a root built by `mod_content::build`; none in
+/// any other root.
+pub fn mod_ids(root: *Path) V {
+    // Implementation ported from Horizon
+    return undefined;
+}
+    // rust: fs::read(root.join(MOD_IDS_MARKER))
+    // rust: .ok()
+    // rust: .and_then(|b| serde_json::from_slice(&b).ok())
+    // rust: .unwrap_or_default()
+}
