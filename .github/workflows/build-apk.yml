@@ -70,44 +70,34 @@ jobs:
 
       - name: Build Native Shared Libraries with Zig for Android
         run: |
-          echo "=== Cross-compiling Zig & Odin Native Libraries for Android ==="
-          SYSROOT="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+          echo "=== Cross-compiling Zig Native Libraries for Android ==="
 
           # 1. ARM64 (arm64-v8a)
-          mkdir -p app/src/main/jniLibs/arm64-v8a android/app/src/main/jniLibs/arm64-v8a
-          zig build-lib src/android_main.zig libodin.a \
+          mkdir -p app/src/main/jniLibs/arm64-v8a
+          zig build-lib src/android_main.zig \
             -target aarch64-linux-android \
-            -sysroot "$SYSROOT" \
             -dynamic \
-            -lc \
             -O ReleaseFast \
             --name zigcraft
           cp libzigcraft.so app/src/main/jniLibs/arm64-v8a/
-          cp libzigcraft.so android/app/src/main/jniLibs/arm64-v8a/
 
           # 2. ARMv7 (armeabi-v7a)
-          mkdir -p app/src/main/jniLibs/armeabi-v7a android/app/src/main/jniLibs/armeabi-v7a
-          zig build-lib src/android_main.zig libodin.a \
+          mkdir -p app/src/main/jniLibs/armeabi-v7a
+          zig build-lib src/android_main.zig \
             -target arm-linux-androideabi \
-            -sysroot "$SYSROOT" \
             -dynamic \
-            -lc \
             -O ReleaseFast \
             --name zigcraft
           cp libzigcraft.so app/src/main/jniLibs/armeabi-v7a/
-          cp libzigcraft.so android/app/src/main/jniLibs/armeabi-v7a/
 
           # 3. x86_64
-          mkdir -p app/src/main/jniLibs/x86_64 android/app/src/main/jniLibs/x86_64
-          zig build-lib src/android_main.zig libodin.a \
+          mkdir -p app/src/main/jniLibs/x86_64
+          zig build-lib src/android_main.zig \
             -target x86_64-linux-android \
-            -sysroot "$SYSROOT" \
             -dynamic \
-            -lc \
             -O ReleaseFast \
             --name zigcraft
           cp libzigcraft.so app/src/main/jniLibs/x86_64/
-          cp libzigcraft.so android/app/src/main/jniLibs/x86_64/
           rm -f libzigcraft.so
 
           echo "=== Native Libraries Packaged ==="
