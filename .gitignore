@@ -7,3 +7,4 @@ android/.gradle/
 android/app/build/
 android/local.properties
 .DS_Store
+horizon_repo/
